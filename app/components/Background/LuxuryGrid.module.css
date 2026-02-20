@@ -1,0 +1,55 @@
+.pageWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-auto-rows: 120px;
+  background: #000; /* Deep black base */
+  overflow: hidden;
+}
+
+.box {
+  position: relative;
+  background-color: transparent;
+  /* Subtle Border Gradient Effect */
+  border: 1px solid transparent;
+  background-image: linear-gradient(#000, #000), 
+                    linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  overflow: hidden;
+  transition: all 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* The Flip Layer: Light Gradient Fill */
+.box::before {
+  content: '';
+  position: absolute;
+  inset: 2px; /* Slight gap taaki border dikhe */
+  /* Very Light Gradient Fill (Semi-transparent) */
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(4px);
+  border-radius: 2px;
+  transform: translateY(102%); /* Start from bottom */
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 1;
+}
+
+/* Glow Border on Active */
+.active {
+  background-image: linear-gradient(#000, #000), 
+                    linear-gradient(135deg, #fff, rgba(255,255,255,0.2));
+}
+
+.active::before {
+  transform: translateY(0); /* Slide Up */
+}
+
+/* Hover par extra glow */
+.box:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  z-index: 2;
+}

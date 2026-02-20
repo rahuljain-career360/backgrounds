@@ -1,0 +1,79 @@
+/* GlassTimer.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #1e1e2e 0%, #11111b 100%);
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.timerWrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Glassmorphic Background Circle */
+.glassBase {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* The Main Shrinking Body */
+.shrinkingGlass {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  
+  /* Gradient with Glass Effect */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* Cubic-Bezier for "Elastic" feel */
+  transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              background 0.5s ease;
+  
+  box-shadow: 0 0 40px rgba(0, 242, 254, 0.2);
+}
+
+.activeShadow {
+  box-shadow: 0 0 60px rgba(0, 242, 254, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.timerValue {
+  font-size: 5rem;
+  font-weight: 900;
+  background: linear-gradient(to bottom, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.label {
+  color: #00f2fe;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: -10px;
+}

@@ -1,0 +1,86 @@
+/* GradientTimer.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  background: #050505;
+}
+
+.timerWrapper {
+  position: relative;
+  /* Circle size remains FIXED */
+  width: 250px; 
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* The Animated Gradient Border */
+.gradientBackground {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  /* High-end gradient */
+  background: conic-gradient(from 0deg, #00f2fe, #7c3aed, #ff00c8, #00f2fe);
+  transition: padding 1s linear, opacity 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner Solid Part (Mask) */
+.innerCore {
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  /* Smoothens the border thickness change */
+  transition: all 0.3s ease;
+}
+
+.timerValue {
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.statusLabel {
+  color: #00f2fe;
+  font-size: 0.6rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.restartBtn {
+  margin-top: 50px;
+  padding: 12px 40px;
+  background: transparent;
+  color: #666;
+  border: 1px solid #222;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.restartBtn:hover {
+  color: white;
+  border-color: #7c3aed;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+}

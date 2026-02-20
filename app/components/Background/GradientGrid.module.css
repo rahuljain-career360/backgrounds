@@ -1,0 +1,32 @@
+.pageWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  /* 5px grid with small gap for sharpness */
+  grid-template-columns: repeat(auto-fill, 8px); 
+  grid-auto-rows: 8px;
+  background: #000;
+  overflow: hidden;
+  gap: 1px;
+}
+
+.box {
+  width: 8px;
+  height: 8px;
+  background-color: #111; /* Default base */
+  transition: all 0.5s ease;
+  border-radius: 1px;
+}
+
+/* Active State: Uses the random gradient passed from React */
+.active {
+  background: linear-gradient(135deg, var(--color-1), var(--color-2));
+  box-shadow: 0 0 5px var(--color-1); /* Subtle glow */
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.inactive {
+  opacity: 0.1;
+  transform: scale(0.9);
+}

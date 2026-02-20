@@ -1,0 +1,87 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #020617 0%, #000000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Diagonal Background Lines */
+.rayContainer {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 100px,
+    rgba(0, 242, 255, 0.03) 100px,
+    rgba(0, 242, 255, 0.03) 101px
+  );
+  animation: rotateRay 100s infinite linear;
+}
+
+@keyframes rotateRay {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* The "Scanning" Horizontal Line */
+.scanner {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #bc00ff, transparent);
+  filter: blur(4px);
+  opacity: 0.5;
+  z-index: 1;
+  animation: scanMove 4s infinite ease-in-out;
+}
+
+@keyframes scanMove {
+  0% { top: -5%; }
+  100% { top: 105%; }
+}
+
+/* Floating HUD Circles */
+.hudCircle {
+  position: absolute;
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  border-radius: 50%;
+  animation: pulseHub 4s infinite alternate ease-in-out;
+}
+
+.hub1 { width: 500px; height: 500px; border-style: dashed; opacity: 0.2; }
+.hub2 { width: 700px; height: 700px; border: 1px double rgba(188, 0, 255, 0.1); }
+
+@keyframes pulseHub {
+  from { transform: scale(0.9); opacity: 0.1; }
+  to { transform: scale(1.1); opacity: 0.3; }
+}
+
+/* Premium Card with "Circuit" Corners */
+.premiumCard {
+  position: relative;
+  z-index: 10;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  text-align: center;
+  color: white;
+  clip-path: polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #00f2ff, #bc00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}

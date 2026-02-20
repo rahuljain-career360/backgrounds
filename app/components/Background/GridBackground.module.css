@@ -1,0 +1,43 @@
+.pageWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  /* Square boxes banane ke liye aspect-ratio use karenge */
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-rows: 100px;
+  background: #000;
+  overflow: hidden;
+  border: none;
+}
+
+.box {
+  position: relative;
+  background-color: #000;
+  border: 0.1px solid rgba(255, 255, 255, 0.05); /* Very subtle grid lines */
+  overflow: hidden;
+  transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1); /* Softer transition */
+}
+
+/* White Fill Layer */
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: translateY(100%); /* Default hidden */
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Active State: Slide Up */
+.active::before {
+  transform: translateY(0);
+}
+
+/* Hover par bhi thoda interaction rakhte hain (Optional) */
+.box:hover::before {
+  opacity: 0.8;
+  transform: translateY(0);
+}

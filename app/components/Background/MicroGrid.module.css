@@ -1,0 +1,35 @@
+.pageWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  /* 5px width and height */
+  grid-template-columns: repeat(auto-fill, 5px);
+  grid-auto-rows: 5px;
+  background: #000;
+  overflow: hidden;
+  gap: 1px; /* Subtle gap to see the grid structure */
+}
+
+.box {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  transition: background-color 1.2s ease-in-out; /* Smooth fade for micro-size */
+}
+
+/* Very light gradient fill for active boxes */
+.active {
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 80%);
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.2); /* Micro glow */
+}
+
+/* Border gradient logic for micro-boxes usually looks messy, 
+   so we use subtle opacity on the whole grid instead */
+.pageWrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.6));
+  z-index: 5;
+}
