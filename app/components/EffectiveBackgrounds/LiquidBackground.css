@@ -1,0 +1,140 @@
+/* .full-page-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #030303;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.content-overlay {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  pointer-events: none;
+}
+
+.goo-filter-container {
+  width: 100%;
+  height: 100%;
+  filter: url('#gooey-effect');
+}
+
+.liquid-blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.7;
+  mix-blend-mode: plus-lighter; 
+}
+
+
+@keyframes movement-1 {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(150px, 100px) rotate(90deg) scale(1.2); }
+  100% { transform: translate(-100px, 200px) rotate(180deg) scale(1); }
+}
+
+@keyframes movement-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-200px, -150px) scale(0.8); }
+  100% { transform: translate(100px, -50px) scale(1.1); }
+}
+
+
+@keyframes movement-3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(100px, -250px) scale(1.3); }
+  100% { transform: translate(-150px, 50px) scale(0.9); }
+}
+
+.blob-anim-1 { animation: movement-1 infinite alternate ease-in-out; }
+.blob-anim-2 { animation: movement-2 infinite alternate ease-in-out; }
+.blob-anim-3 { animation: movement-3 infinite alternate ease-in-out; }
+
+.svg-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+} */
+
+.lava-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000; /* Deep black background for contrast */
+  overflow: hidden;
+  z-index: -1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  color: white;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+  pointer-events: none;
+}
+
+.gooey-wrapper {
+  width: 100%;
+  height: 100%;
+  filter: url('#gooey-liquid'); /* Puray container par filter */
+}
+
+.liquid-element {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.8;
+  mix-blend-mode: screen; /* Isse colors blend ho kar chamkenge */
+}
+
+/* 4 Alag tarah ke movement patterns taaki poora page cover ho */
+@keyframes fluid-move-1 {
+  0% { transform: translate(-50%, -50%) translate(0, 0) scale(1); }
+  50% { transform: translate(-50%, -50%) translate(30vw, 20vh) scale(1.2); }
+  100% { transform: translate(-50%, -50%) translate(-20vw, 40vh) scale(0.9); }
+}
+
+@keyframes fluid-move-2 {
+  0% { transform: translate(-50%, -50%) translate(0, 0) scale(1.1); }
+  50% { transform: translate(-50%, -50%) translate(-40vw, -10vh) scale(0.8); }
+  100% { transform: translate(-50%, -50%) translate(10vw, -40vh) scale(1.2); }
+}
+
+@keyframes fluid-move-3 {
+  0% { transform: translate(-50%, -50%) translate(20vw, -30vh) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) translate(-10vw, 10vh) rotate(180deg); }
+  100% { transform: translate(-50%, -50%) translate(30vw, 40vh) rotate(360deg); }
+}
+
+@keyframes fluid-move-4 {
+  0% { transform: translate(-50%, -50%) translate(-30vw, 30vh); }
+  50% { transform: translate(-50%, -50%) translate(40vw, -20vh) scale(1.4); }
+  100% { transform: translate(-50%, -50%) translate(0, 0); }
+}
+
+.anim-type-1 { animation: fluid-move-1 infinite alternate ease-in-out; }
+.anim-type-2 { animation: fluid-move-2 infinite alternate ease-in-out; }
+.anim-type-3 { animation: fluid-move-3 infinite alternate ease-in-out; }
+.anim-type-4 { animation: fluid-move-4 infinite alternate ease-in-out; }
+
+.svg-engine {
+  width: 0;
+  height: 0;
+  position: absolute;
+}

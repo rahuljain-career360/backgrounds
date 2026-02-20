@@ -1,0 +1,52 @@
+.glass-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: white;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  pointer-events: none;
+}
+
+.center-content h1 {
+  font-size: 4rem;
+  letter-spacing: 10px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.glass-bubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle edge */
+  backdrop-filter: blur(2px); /* Glass look */
+  will-change: transform;
+}
+
+/* Shine effect on the bubble */
+.glass-bubble::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 25%;
+  height: 25%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  filter: blur(2px);
+}

@@ -36,17 +36,14 @@ body {
 }   
 
 .main-heading {
-  /* Font & Color */
   font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   color: #000000;
-  /* Sizing & Weight */
-  font-size: 32px; /* Scalable size */
-  font-weight: 900; /* Extra bold */
-  letter-spacing: -2px; /* Tight tracking for a high-end look */
+  font-size: 32px;
+  font-weight: 900; 
+  letter-spacing: -2px; 
   line-height: 1.1;
   margin-bottom: 20px;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
-  
   transition: all 0.3s ease;
 }
 
