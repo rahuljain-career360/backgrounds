@@ -1,0 +1,61 @@
+.electricity-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000; /* Pure black background */
+  overflow: hidden;
+  z-index: -1;
+}
+
+.electric-line {
+  position: absolute;
+  top: -10%;
+  width: 2px;
+  background: #00f3ff; /* Electric Blue */
+  box-shadow: 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+  opacity: 0;
+  animation: shock linear infinite;
+}
+
+/* Flash effect for the whole background */
+.glow-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 243, 255, 0.05) 0%, transparent 80%);
+  animation: backgroundFlash 3s infinite;
+}
+
+@keyframes shock {
+  0% {
+    transform: translateY(0) scaleY(1) skewX(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  10% {
+    /* Electric jump */
+    transform: translateY(20vh) scaleY(1.5) skewX(20deg);
+  }
+  15% {
+    transform: translateY(40vh) scaleY(1.2) skewX(-20deg);
+  }
+  20% {
+    transform: translateY(100vh) scaleY(1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes backgroundFlash {
+  0%, 100% { opacity: 0.3; }
+  92% { opacity: 0.3; }
+  95% { opacity: 1; } /* Sudden lightning flash */
+  98% { opacity: 0.3; }
+}

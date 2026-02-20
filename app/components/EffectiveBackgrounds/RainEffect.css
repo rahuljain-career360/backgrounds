@@ -1,0 +1,25 @@
+.rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d; /* Dark background for visibility */
+  overflow: hidden;
+  z-index: -1; /* Keeps it behind your content */
+}
+
+.rain-drop {
+  position: absolute;
+  top: -50px; /* Start above the viewport */
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6));
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh); /* Move past the bottom of the screen */
+  }
+}

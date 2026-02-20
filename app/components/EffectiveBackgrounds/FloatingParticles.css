@@ -1,0 +1,40 @@
+.particle-viewport {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #050505; /* Deep black taaki particles dikhen */
+  overflow: hidden;
+  z-index: 999; /* Isse top par rakhein test karne ke liye */
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  /* Glowing White Particles */
+  background: white; 
+  border-radius: 50%;
+  /* Glow effect taaki aankhon ko dikhe */
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff; 
+  animation: slowFloat linear infinite;
+  will-change: transform;
+}
+
+@keyframes slowFloat {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    /* Particles ko diagonal move karte hain */
+    transform: translate(100px, -100px);
+    opacity: 0;
+  }
+}
