@@ -1,0 +1,134 @@
+.luxury-wrapper {
+  position: fixed;
+  inset: 0;
+  background: #050505; /* Deep luxury black */
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texture Layer: Making it feel like a real screen/material */
+.texture-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  opacity: 0.12;
+  pointer-events: none;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  filter: contrast(150%) brightness(100%);
+}
+
+/* Spotlight Effect: Soft and moody */
+.spotlight-container {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.spotlight {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.4;
+  will-change: transform;
+}
+
+.light-1 {
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle, rgba(50, 0, 255, 0.4) 0%, transparent 70%);
+  top: -20%;
+  left: -10%;
+  animation: float-spotlight 25s infinite alternate ease-in-out;
+}
+
+.light-2 {
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(0, 255, 180, 0.2) 0%, transparent 70%);
+  bottom: -15%;
+  right: -10%;
+  animation: float-spotlight 30s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes float-spotlight {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10vw, 5vh) scale(1.1); }
+  100% { transform: translate(-5vw, 15vh) scale(1); }
+}
+
+/* Glass Mesh Layer: Creating depth */
+.glass-mesh-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at 50% 50%, transparent 0%, #050505 85%);
+  backdrop-filter: blur(2px);
+}
+
+/* Content Styling */
+.luxury-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.brand-tag {
+  color: #666;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 6px 12px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 6rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 0.95;
+  letter-spacing: -5px;
+}
+
+.glow-text {
+  background: linear-gradient(180deg, #fff 0%, #444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.9;
+}
+
+.luxury-stats {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.stat-item span {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.stat-item p {
+  color: #555;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+}

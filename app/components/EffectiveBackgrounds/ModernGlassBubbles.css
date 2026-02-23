@@ -1,0 +1,58 @@
+.modern-container {
+  position: fixed;
+  inset: 0;
+  background: #fcfcfc; /* Clean White Background */
+  overflow: hidden;
+  z-index: -1;
+}
+
+.main-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  text-align: center;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  pointer-events: none;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 900;
+  color: #111;
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.hero-subtitle {
+  color: #666;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.modern-bubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  /* High-end glass effect */
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  /* Soft shadow for depth on white bg */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  will-change: transform;
+}
+
+/* Subtle shine for a premium feel */
+.modern-bubble::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.5) 0%, transparent 40%);
+  border-radius: 50%;
+}

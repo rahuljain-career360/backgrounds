@@ -1,0 +1,146 @@
+.aurora-container {
+  position: fixed;
+  inset: 0;
+  background: #fcfcfd; /* Off-white premium base */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+/* Quality Noise Texture */
+.aurora-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+}
+
+/* The Animated Blobs */
+.aurora-blobs {
+  position: absolute;
+  inset: 0;
+  filter: blur(100px);
+  z-index: 1;
+}
+
+.aurora-blob {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+}
+
+.blue {
+  background: #4facfe;
+  top: -20%;
+  left: -10%;
+  animation: drift 20s infinite alternate linear;
+}
+
+.pink {
+  background: #ff0844;
+  bottom: -20%;
+  right: -10%;
+  animation: drift 25s infinite alternate-reverse linear;
+}
+
+.purple {
+  background: #c471ed;
+  top: 40%;
+  left: 30%;
+  width: 40vw;
+  height: 40vw;
+  animation: drift 15s infinite alternate linear;
+}
+
+/* Modern Grid Lines - High Quality Design Element */
+.aurora-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg) translate(0, 0) scale(1); }
+  to { transform: rotate(360deg) translate(10%, 10%) scale(1.2); }
+}
+
+/* Typography & Content */
+.aurora-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.main-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-top: 24px;
+  letter-spacing: -4px;
+  color: #1d1d1f;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #4facfe 0%, #c471ed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-group {
+  margin-top: 40px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-primary {
+  padding: 16px 32px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary {
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}

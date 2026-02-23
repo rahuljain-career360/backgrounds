@@ -1,0 +1,119 @@
+.logo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* 1. Behind the Logo Glow */
+.logo-glow {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: 1;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.logo-wrapper:hover .logo-glow {
+  opacity: 1;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.2) 0%, transparent 70%);
+}
+
+.logo-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 2. SVG Logo Styling */
+.main-logo-svg {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+}
+
+.logo-shape-outline {
+  animation: logo-rotate 10s infinite linear;
+  transform-origin: center;
+}
+
+.logo-inner-shape {
+  animation: logo-pulse 3s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes logo-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes logo-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* 3. Typography (Premium Fonts feel) */
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  margin: 0;
+  line-height: 1;
+}
+
+.brand-name span {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.brand-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #666;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* 4. The Glass Reflection Effect */
+.logo-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg, 
+    transparent 45%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 55%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease-in-out;
+}
+
+.logo-wrapper:hover::after {
+  transform: translateX(100%);
+}

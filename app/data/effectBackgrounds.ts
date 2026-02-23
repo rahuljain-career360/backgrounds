@@ -7,11 +7,15 @@ import FloatingParticles from "../components/EffectiveBackgrounds/FloatingPartic
 import Galaxy from "../components/EffectiveBackgrounds/Galaxy";
 import GlassBubbles from "../components/EffectiveBackgrounds/GlassBubbles";
 import GlowParticles from "../components/EffectiveBackgrounds/GlowParticles";
+import LightGlassBubble from "../components/EffectiveBackgrounds/LightGlassBubble";
 import LiquidBackground from "../components/EffectiveBackgrounds/LiquidBackground";
 import LiquidNebula from "../components/EffectiveBackgrounds/LiquidNebula";
 import LiquidSquares from "../components/EffectiveBackgrounds/LiquidSquares";
+import ModernGlassBubbles from "../components/EffectiveBackgrounds/ModernGlassBubbles";
+import PremiumMeshBackground from "../components/EffectiveBackgrounds/PremiumMeshBackground";
 import RainEffect from "../components/EffectiveBackgrounds/RainEffect";
 import StarField from "../components/EffectiveBackgrounds/StarField";
+import TrendyGlassBubbles from "../components/EffectiveBackgrounds/TrendyGlassBubbles";
 import { FlipMaster } from "../components/Timers/FlipMaster";
 
 export const effectBackgrounds = {
@@ -74,6 +78,23 @@ export const effectBackgrounds = {
    LiquidSquare: {
     name: "Liquid Square  Effect",
     Component: LiquidSquares,
+  },
+    LightGlass: {
+    name: "Light Glass  Effect",
+    Component: LightGlassBubble,
+  },
+   MordenGlass: {
+    name: "Morden Glass  Effect",
+    Component: ModernGlassBubbles,
+  },
+   TrendyGlass: {
+    name: "Trendy Glass  Effect",
+    Component: TrendyGlassBubbles,
+  },
+
+    PremiumMesh: {
+    name: "Premium Mesh Glass  Effect",
+    Component: PremiumMeshBackground,
   },
 
 

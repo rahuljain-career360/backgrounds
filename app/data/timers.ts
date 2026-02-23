@@ -1,3 +1,4 @@
+import PremiumLogo from "../components/logo/PremiumLogo";
 import ProductPage from "../components/Product/ProductPage";
 import DeepClock from "../components/Timers/DeepClock";
 import { FlipMaster } from "../components/Timers/FlipMaster";
@@ -40,4 +41,10 @@ export const timers = {
     name: "Product Page",
     Component: ProductPage,
   },
+
+    PremiumLogo: {
+    name: "Premium Logo Page",
+    Component: PremiumLogo,
+  },
+
 } as const;

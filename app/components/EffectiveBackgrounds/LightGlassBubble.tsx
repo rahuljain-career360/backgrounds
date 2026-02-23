@@ -11,28 +11,27 @@ interface Bubble {
   gradient: string;
 }
 
-const GlassBubbles: React.FC = () => {
+const LightGlassBubble: React.FC = () => {
   const [bubblesData, setBubblesData] = useState<Bubble[]>([]);
   const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const numBubbles = 75; // Zyada balls
+    const numBubbles = 60; // Thoda optimize rakha hai performance ke liye
     
-    // Bubble gradients: Glassy and Vibrant
+    // Transparent Glassy Gradients - Alpha (0.1 - 0.3) rakha hai transparency ke liye
     const gradients = [
-      'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 0, 150, 0.4) 50%, rgba(100, 0, 255, 0.7) 100%)',
-      'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 212, 255, 0.4) 50%, rgba(9, 9, 121, 0.7) 100%)',
-      'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(121, 255, 154, 0.4) 50%, rgba(0, 150, 100, 0.7) 100%)',
-      'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 200, 0, 0.4) 50%, rgba(255, 80, 0, 0.7) 100%)',
-      'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0.4) 100%)'
+      'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 60%, rgba(255, 0, 150, 0.1) 100%)',
+      'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 60%, rgba(0, 212, 255, 0.1) 100%)',
+      'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 60%, rgba(121, 255, 154, 0.1) 100%)',
+      'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.02) 70%, rgba(255, 255, 255, 0.1) 100%)'
     ];
 
     const initialBubbles: Bubble[] = Array.from({ length: numBubbles }).map((_, i) => ({
       x: Math.random() * (window.innerWidth - 100),
       y: Math.random() * (window.innerHeight - 100),
-      dx: (Math.random() - 0.5) * 3, // Speed
-      dy: (Math.random() - 0.5) * 3,
-      size: Math.random() * 80 + 40, // 40px to 120px
+      dx: (Math.random() - 0.5) * 2,
+      dy: (Math.random() - 0.5) * 2,
+      size: Math.random() * 100 + 40,
       gradient: gradients[i % gradients.length],
     }));
 
@@ -47,7 +46,6 @@ const GlassBubbles: React.FC = () => {
         bubble.x += bubble.dx;
         bubble.y += bubble.dy;
 
-        // Bounce wall collision
         if (bubble.x + bubble.size > window.innerWidth || bubble.x < 0) bubble.dx *= -1;
         if (bubble.y + bubble.size > window.innerHeight || bubble.y < 0) bubble.dy *= -1;
 
@@ -63,8 +61,8 @@ const GlassBubbles: React.FC = () => {
   return (
     <div className="glass-container">
       <div className="center-content">
-        <h1>Glass Orbs</h1>
-        <p>Dynamic 3D Bubbles</p>
+        <h1>Crystal Mesh</h1>
+        <p>Light Transparent Orbs</p>
       </div>
       
       {bubblesData.map((bubble, i) => (
@@ -76,7 +74,6 @@ const GlassBubbles: React.FC = () => {
             width: `${bubble.size}px`,
             height: `${bubble.size}px`,
             background: bubble.gradient,
-            boxShadow: 'inset -5px -5px 15px rgba(0,0,0,0.2), 5px 10px 20px rgba(0,0,0,0.3)',
           }}
         />
       ))}
@@ -84,4 +81,4 @@ const GlassBubbles: React.FC = () => {
   );
 };
 
-export default GlassBubbles;
+export default LightGlassBubble;

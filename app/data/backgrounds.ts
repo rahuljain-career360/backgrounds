@@ -12,6 +12,12 @@ import { LuxuryGridBackground } from "../components/Background/LuxuryGridBackgro
 import { MicroGridBackground } from "../components/Background/MicroGridBackground";
 import { GradientGrid } from "../components/Background/GradientGrid";
 import { BigGradientGrid } from "../components/Background/BigGradientGrid";
+import AuroraPremium from "../components/Background/AuroraPremium";
+import LuxuryDarkScene from "../components/Background/LuxuryDarkScene";
+import VelvetGlass from "../components/Background/VelvetGlass";
+import PremiumBento from "../components/Background/PremiumBento";
+import VisualBento from "../components/Background/VisualBento";
+import FullScreenBento from "../components/Background/FullScreenBento";
 
 export const backgrounds = {
   gradient: {
@@ -73,5 +79,34 @@ export const backgrounds = {
    BigGridBg: {
     name: "BigGridBg",
     Component: BigGradientGrid,
+  },
+    AuoraBackground: {
+    name: "Aurora Premium",
+    Component: AuroraPremium,
+  },
+    Luxurydark: {
+    name: "Luxury dark Premium",
+    Component: LuxuryDarkScene,
+
+  },
+   valvetGlass: {
+    name: "Valvet Glass Premium",
+    Component: VelvetGlass,
+
+  },
+   bentogrid: {
+    name: "Premium Bento",
+    Component: PremiumBento,
+
+  },
+   visualBentoGrid: {
+    name: "Visual Bento Bento",
+    Component: VisualBento,
+
+  },
+  fullBentoGrid: {
+    name: "Full Screen Bento",
+    Component: FullScreenBento,
+
   },
 } as const;

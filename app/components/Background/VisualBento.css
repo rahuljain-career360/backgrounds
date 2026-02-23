@@ -1,0 +1,141 @@
+.v-bento-wrapper {
+  position: fixed;
+  inset: 0;
+  background: #020202;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.v-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  gap: 16px;
+  width: 90%;
+  max-width: 900px;
+}
+
+/* Base Style for Items */
+.v-item {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+}
+
+.v-item:hover {
+  transform: scale(1.02);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 1. Liquid Fill Animation */
+.v-item-1 { grid-column: span 2; }
+.v-liquid-fill {
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ff0055, #7000ff);
+  opacity: 0.1;
+  border-radius: 40%;
+  animation: liquid-rotate 10s infinite linear;
+}
+
+@keyframes liquid-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 2. Pulse Core */
+.v-pulse-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 40px; height: 40px;
+  background: #00e5ff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(10px);
+  animation: core-pulse 3s infinite ease-in-out;
+}
+
+@keyframes core-pulse {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.5); }
+}
+
+/* 3. Border Runner (Animated Border) */
+.v-item-3 {
+  border: none;
+  background: rgba(255, 255, 255, 0.03);
+}
+.v-item-3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* Border thickness */
+  border-radius: 20px;
+  background: conic-gradient(from 0deg, transparent, #00e5ff, transparent 30%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: border-spin 4s infinite linear;
+}
+
+@keyframes border-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 4. Large Interior Mesh */
+.v-item-4 { grid-row: span 2; }
+.v-inner-mesh {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, #7000ff, transparent);
+  opacity: 0.15;
+  filter: blur(40px);
+  animation: mesh-float 6s infinite alternate;
+}
+
+@keyframes mesh-float {
+  from { transform: scale(1) translate(0,0); }
+  to { transform: scale(1.3) translate(10px, 20px); }
+}
+
+/* 5. Scanline Effect */
+.v-scan-line {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.05), transparent);
+  animation: scan 4s infinite linear;
+}
+
+@keyframes scan {
+  to { top: 150%; }
+}
+
+/* Background Decoration */
+.v-orb {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(100px);
+  opacity: 0.2;
+}
+.v-orb-1 { background: #ff0055; top: 10%; left: 10%; }
+.v-orb-2 { background: #7000ff; bottom: 10%; right: 10%; }
+
+.v-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+}

@@ -1,0 +1,114 @@
+.fs-bento-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #020202;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* 1. Full Page Grid Logic */
+.fs-grid-layout {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(4, 1fr); /* 4 Dynamic columns */
+  grid-template-rows: repeat(3, 1fr);    /* 3 Dynamic rows */
+  gap: 1px; /* Minimalist divider look */
+  background: rgba(255, 255, 255, 0.05); /* Divider color */
+}
+
+.fs-cell {
+  position: relative;
+  background: #050505;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s ease;
+}
+
+.fs-cell:hover {
+  background: #080808;
+}
+
+/* Bento Spanning Rules */
+.span-2-2 { grid-column: span 2; grid-row: span 2; }
+.span-wide { grid-column: span 2; }
+.span-tall { grid-row: span 2; }
+
+/* 2. Visual Effects inside Cells */
+
+/* Moving Border Shine */
+.fs-border-shine::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  animation: shine-slide 4s infinite linear;
+}
+
+@keyframes shine-slide {
+  to { left: 200%; }
+}
+
+/* Inner Glows */
+.fs-inner-glow {
+  position: absolute;
+  width: 80%; height: 80%;
+  filter: blur(60px);
+  opacity: 0.15;
+  border-radius: 50%;
+  animation: breathe 6s infinite alternate ease-in-out;
+}
+.cyan { background: #00f2ff; }
+.purple { background: #7000ff; }
+
+@keyframes breathe {
+  from { transform: scale(0.8); opacity: 0.1; }
+  to { transform: scale(1.2); opacity: 0.25; }
+}
+
+/* Scanning Line */
+.fs-scanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.03), transparent);
+  height: 20%;
+  animation: scan-move 3s infinite linear;
+}
+
+@keyframes scan-move {
+  from { top: -20%; }
+  to { top: 120%; }
+}
+
+/* 3. Ambient Background Orbs */
+.fs-ambient-layer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  filter: blur(100px);
+  opacity: 0.4;
+}
+
+.fs-orb {
+  position: absolute;
+  width: 40vw; height: 40vw;
+  border-radius: 50%;
+}
+.fs-orb-1 { background: #7000ff; top: -10%; left: -10%; }
+.fs-orb-2 { background: #ff0055; bottom: -10%; right: -10%; }
+.fs-orb-3 { background: #00f2ff; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* 4. Texture Overlay */
+.fs-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.05;
+  z-index: 10;
+}

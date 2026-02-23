@@ -1,0 +1,158 @@
+:root {
+  --ruby: #e11d48;
+  --sapphire: #2563eb;
+  --emerald: #059669;
+}
+
+.velvet-container {
+  position: fixed;
+  inset: 0;
+  background-color: #030303; /* Deepest black */
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* 1. The Mesh Orbs */
+.mesh-layer {
+  position: absolute;
+  inset: 0;
+  filter: blur(120px); /* Heavy blur for silk effect */
+  opacity: 0.6;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+.orb-ruby {
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, var(--ruby) 0%, transparent 70%);
+  top: -10%;
+  left: -5%;
+  animation: orb-float 20s infinite alternate ease-in-out;
+}
+
+.orb-sapphire {
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, var(--sapphire) 0%, transparent 70%);
+  bottom: -5%;
+  right: -5%;
+  animation: orb-float 25s infinite alternate-reverse ease-in-out;
+}
+
+.orb-emerald {
+  width: 35vw;
+  height: 35vw;
+  background: radial-gradient(circle, var(--emerald) 0%, transparent 70%);
+  top: 30%;
+  left: 30%;
+  animation: orb-float 18s infinite alternate ease-in-out;
+}
+
+@keyframes orb-float {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  100% { transform: translate(15%, 10%) rotate(180deg) scale(1.2); }
+}
+
+/* 2. The Frosted Overlay (Magic Layer) */
+.frosted-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px) saturate(150%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(3, 3, 3, 0.4) 100%);
+  z-index: 2;
+}
+
+/* 3. The Texture (Grain) */
+.grain-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+}
+
+/* 4. Content Design */
+.velvet-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.glass-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.velvet-title {
+  font-size: 6.5rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 0.9;
+  letter-spacing: -6px;
+  margin: 0;
+}
+
+.velvet-title span {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+}
+
+.velvet-sub {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.velvet-actions {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.primary-glass-btn {
+    padding: 14px 28px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-glass-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.secondary-link {
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    opacity: 0.7;
+}

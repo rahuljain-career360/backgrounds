@@ -1,0 +1,49 @@
+.glass-container {
+  position: fixed;
+  inset: 0;
+  /* Deep Blue/Black gradient background taaki light bubbles chamkein */
+  background: radial-gradient(circle at center, #0a0c14 0%, #000000 100%);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  pointer-events: none;
+}
+
+.glass-bubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  /* Very thin light border for glass edge */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  /* The blur effect makes it look like real glass */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 
+    inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+    5px 15px 30px rgba(0, 0, 0, 0.2);
+  will-change: transform;
+}
+
+/* Shine spot: Isse bubble real lagti hai */
+.glass-bubble::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 80%);
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
