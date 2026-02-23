@@ -1,0 +1,70 @@
+/* Full page layout */
+.page-container {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #111; /* Dark background for premium look */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* 3D Viewport */
+.carousel-viewport {
+  width: 300px;
+  height: 200px;
+  perspective: 1200px; /* Depth control */
+}
+
+/* Spinner that rotates */
+.carousel-spinner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotate-carousel 20s linear infinite;
+}
+
+.carousel-spinner:hover {
+  animation-play-state: paused;
+}
+
+/* Individual Image Cards */
+.carousel-item {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  border: 4px solid white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animation Logic */
+@keyframes rotate-carousel {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.instructions {
+  position: absolute;
+  bottom: 50px;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}

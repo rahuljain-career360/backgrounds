@@ -1,0 +1,87 @@
+:root {
+  --card-width: 280px;
+  --card-height: 400px;
+}
+
+.scene {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #222, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px; /* High perspective for cinematic feel */
+  overflow: hidden;
+}
+
+.carousel {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate-auto 25s infinite linear;
+}
+
+.carousel:hover {
+  animation-play-state: paused;
+}
+
+.card-item {
+  position: absolute;
+  width: var(--card-width);
+  height: var(--card-height);
+  left: 0;
+  top: 0;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+.card-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: filter 0.3s;
+}
+
+.card-item:hover .card-content img {
+  filter: brightness(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  color: white;
+  text-align: center;
+}
+
+/* 3D Auto-Rotation */
+@keyframes rotate-auto {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* Adding a reflection effect on the floor */
+.scene::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+  bottom: 0;
+  filter: blur(20px);
+}

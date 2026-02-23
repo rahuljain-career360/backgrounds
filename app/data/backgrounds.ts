@@ -18,6 +18,15 @@ import VelvetGlass from "../components/Background/VelvetGlass";
 import PremiumBento from "../components/Background/PremiumBento";
 import VisualBento from "../components/Background/VisualBento";
 import FullScreenBento from "../components/Background/FullScreenBento";
+import AuroraBackground from "../components/Background/AuroraBackground";
+import MacSystemUI from "../components/stystemUI/MacSystemUI";
+import M4NexusUI from "../components/stystemUI/M4NexusUI";
+import M4BlogUI from "../components/stystemUI/M4BlogUI";
+import Carousel3D from "../components/stystemUI/Carousel3D";
+import CardCarousel from "../components/stystemUI/CardCarousel";
+import LoginPage from "../components/login/LoginPage";
+import PremiumLogin from "../components/login/PremiumLogin";
+import GradientLogin from "../components/login/GradientLogin";
 
 export const backgrounds = {
   gradient: {
@@ -109,4 +118,59 @@ export const backgrounds = {
     Component: FullScreenBento,
 
   },
+  AuroraBackground: {
+    name: "Aurora Background Bento",
+    Component: AuroraBackground,
+
+  },
+   MacSystemUI: {
+    name: "MacSystem UI Design",
+    Component: MacSystemUI,
+
+  },
+   M4NexusUI: {
+    name: "M4Nexus UI Design",
+    Component: M4NexusUI,
+
+  },
+   M4BlogUI: {
+    name: "M4Blog UI Design",
+    Component: M4BlogUI,
+
+  },
+   Carousel3D: {
+    name: "Carousel3D Design",
+    Component: Carousel3D,
+
+  },
+   CardCarousel: {
+    name: "Card Carousel Design",
+    Component: CardCarousel,
+
+  },
+   LoginPage: {
+    name: "Login Page Design",
+    Component: LoginPage,
+
+  },
+   PremiumLogin: {
+    name: "Premium Login Design",
+    Component: PremiumLogin,
+
+  },
+
+  GradientLogin: {
+    name: "Gradient Login Design",
+    Component: GradientLogin,
+
+  },
+
+
+  
+
+
+  
+  
+  
+
 } as const;
