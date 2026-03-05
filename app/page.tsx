@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-        <Link href="backgrounds" >Backgrounds</Link>
-        <Link href="timers" >Timers</Link>
-        <Link href="effectbackground" >Effective Backgrounds</Link>
+    <div className="home-page">
+        <Link className="home-buttons" href="backgrounds" >Backgrounds</Link>
+        <Link className="home-buttons" href="timers" >Timers</Link>
+        <Link className="home-buttons" href="effectbackground" >Effective Backgrounds</Link>
     </div>
   );
 }

@@ -22,10 +22,10 @@ const TrendyGlassBubbles: React.FC = () => {
     
     // Trendy Colors and their matching border colors
     const themes = [
-      { bg: 'rgba(0, 112, 243, 0.15)', border: 'rgba(0, 112, 243, 0.4)' },   // Blue
+      { bg: 'rgba(0, 112, 243, 0.15)', border: 'rgba(22, 120, 233, 0.4)' },   // Blue
       { bg: 'rgba(255, 0, 128, 0.15)', border: 'rgba(255, 0, 128, 0.4)' },  // Pink
       { bg: 'rgba(255, 77, 77, 0.15)', border: 'rgba(255, 77, 77, 0.4)' },   // Red
-      { bg: 'rgba(121, 40, 202, 0.15)', border: 'rgba(121, 40, 202, 0.4)' }, // Purple
+      { bg: 'rgba(121, 40, 202, 0.15)', border: 'rgba(147, 84, 209, 0.4)' }, // Purple
       { bg: 'rgba(0, 223, 216, 0.15)', border: 'rgba(0, 223, 216, 0.4)' }    // Cyan
     ];
 

@@ -27,6 +27,7 @@ import CardCarousel from "../components/stystemUI/CardCarousel";
 import LoginPage from "../components/login/LoginPage";
 import PremiumLogin from "../components/login/PremiumLogin";
 import GradientLogin from "../components/login/GradientLogin";
+import CarouselDesign from "../components/login/CarouselDesign";
 
 export const backgrounds = {
   gradient: {
@@ -45,10 +46,10 @@ export const backgrounds = {
     name: "Premium",
     Component: PremiumBackground,
   },
-//   GrainyAurora: {
-//     name: "Grainy_Bg",
-//     Component: GrainyAuroraBackground,
-//   },
+  //   GrainyAurora: {
+  //     name: "Grainy_Bg",
+  //     Component: GrainyAuroraBackground,
+  //   },
   animatedBlob: {
     name: "Animated_Blob",
     Component: AnimatedOrganicShapesBackground,
@@ -65,7 +66,7 @@ export const backgrounds = {
     name: "Split_horizontal",
     Component: SplitHorizonBackground,
   },
-   CyberBg: {
+  CyberBg: {
     name: "Cyber_bg",
     Component: CyberHubBackground,
   },
@@ -81,96 +82,78 @@ export const backgrounds = {
     name: "MicroGrid_bg",
     Component: MicroGridBackground,
   },
-   GradientGridBg: {
+  GradientGridBg: {
     name: "GradientGrid_bg",
     Component: GradientGrid,
   },
-   BigGridBg: {
+  BigGridBg: {
     name: "BigGridBg",
     Component: BigGradientGrid,
   },
-    AuoraBackground: {
+  AuoraBackground: {
     name: "Aurora Premium",
     Component: AuroraPremium,
   },
-    Luxurydark: {
+  Luxurydark: {
     name: "Luxury dark Premium",
     Component: LuxuryDarkScene,
-
   },
-   valvetGlass: {
+  valvetGlass: {
     name: "Valvet Glass Premium",
     Component: VelvetGlass,
-
   },
-   bentogrid: {
+  bentogrid: {
     name: "Premium Bento",
     Component: PremiumBento,
-
   },
-   visualBentoGrid: {
+  visualBentoGrid: {
     name: "Visual Bento Bento",
     Component: VisualBento,
-
   },
   fullBentoGrid: {
     name: "Full Screen Bento",
     Component: FullScreenBento,
-
   },
   AuroraBackground: {
     name: "Aurora Background Bento",
     Component: AuroraBackground,
-
   },
-   MacSystemUI: {
+  MacSystemUI: {
     name: "MacSystem UI Design",
     Component: MacSystemUI,
-
   },
-   M4NexusUI: {
+  M4NexusUI: {
     name: "M4Nexus UI Design",
     Component: M4NexusUI,
-
   },
-   M4BlogUI: {
+  M4BlogUI: {
     name: "M4Blog UI Design",
     Component: M4BlogUI,
-
   },
-   Carousel3D: {
+  Carousel3D: {
     name: "Carousel3D Design",
     Component: Carousel3D,
-
   },
-   CardCarousel: {
+  CardCarousel: {
     name: "Card Carousel Design",
     Component: CardCarousel,
-
   },
-   LoginPage: {
+  LoginPage: {
     name: "Login Page Design",
     Component: LoginPage,
-
   },
-   PremiumLogin: {
+  PremiumLogin: {
     name: "Premium Login Design",
     Component: PremiumLogin,
-
   },
 
   GradientLogin: {
     name: "Gradient Login Design",
     Component: GradientLogin,
-
   },
 
-
-  
-
-
-  
-  
-  
-
+  CarouselDesignPage: {
+    name: "Carousel Design page",
+    Component: CarouselDesign,
+  },
 } as const;

@@ -27,7 +27,7 @@ export const effectBackgrounds = {
     name: "Rain Effect",
     Component: RainEffect,
   },
-   StarEffect: {
+  StarEffect: {
     name: "Star Effect",
     Component: StarField,
   },
@@ -43,11 +43,11 @@ export const effectBackgrounds = {
     name: "Electric Effect",
     Component: ElectricityEffect,
   },
-   FlotingPartiicals: {
+  FlotingPartiicals: {
     name: "Floting Partical Effect",
     Component: FloatingParticles,
   },
-   GlowPartiicals: {
+  GlowPartiicals: {
     name: "Glow Partical Effect",
     Component: GlowParticles,
   },
@@ -59,11 +59,11 @@ export const effectBackgrounds = {
     name: "Animated Square Effect",
     Component: AnimatedDarkBackground,
   },
-   LiquidBg: {
+  LiquidBg: {
     name: "Liquid Background Effect",
     Component: LiquidBackground,
   },
-   BounceBg: {
+  BounceBg: {
     name: "Bounce Background Effect",
     Component: BouncingBlobs,
   },
@@ -75,31 +75,25 @@ export const effectBackgrounds = {
     name: "Dynamic Glass  Effect",
     Component: DynamicGlassScene,
   },
-   LiquidSquare: {
+  LiquidSquare: {
     name: "Liquid Square  Effect",
     Component: LiquidSquares,
   },
-    LightGlass: {
+  LightGlass: {
     name: "Light Glass  Effect",
     Component: LightGlassBubble,
   },
-   MordenGlass: {
+  MordenGlass: {
     name: "Morden Glass  Effect",
     Component: ModernGlassBubbles,
   },
-   TrendyGlass: {
+  TrendyGlass: {
     name: "Trendy Glass  Effect",
     Component: TrendyGlassBubbles,
   },
 
-    PremiumMesh: {
+  PremiumMesh: {
     name: "Premium Mesh Glass  Effect",
     Component: PremiumMeshBackground,
   },
-
-
- 
- 
- 
-  
 } as const;
