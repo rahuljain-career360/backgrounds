@@ -1,0 +1,97 @@
+.infinity-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: #080808;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+.bg-text {
+  position: absolute;
+  font-size: 20vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  letter-spacing: -1rem;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.carousel-scene {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+.infinity-card {
+  position: absolute;
+  width: 300px;
+  height: 420px;
+  transform-style: preserve-3d;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  background: #111;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.card-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  font-weight: 500;
+  text-align: center;
+}
+
+.nav-controls {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover {
+  background: white;
+  color: black;
+  transform: scale(1.1);
+}

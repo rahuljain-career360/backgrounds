@@ -20,4 +20,4 @@ export function WavesBackground() {
       <h1>Waves Background</h1>
     </div>
   );
-}
+}   

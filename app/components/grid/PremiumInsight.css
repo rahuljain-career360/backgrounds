@@ -1,0 +1,56 @@
+.premium-container {
+  background: #050505;
+  color: #fff;
+  min-height: 100vh;
+  padding: 100px 5%;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.header-section { margin-bottom: 60px; }
+.premium-title { font-size: 3rem; font-weight: 800; letter-spacing: -0.04em; }
+.highlight { color: #555; }
+.premium-subtitle { color: #666; margin-top: 10px; font-size: 1.1rem; }
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.insight-card {
+  background: #0f0f11;
+  border: 1px solid #1a1a1e;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.insight-card:hover { border-color: #333; }
+.card-glow { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 0.5s; }
+.insight-card:hover .card-glow { opacity: 1; }
+
+.card-inner { padding: 32px; position: relative; z-index: 1; }
+
+.card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.card-label { font-family: monospace; font-size: 0.75rem; letter-spacing: 0.1em; }
+
+.viz-container { display: flex; align-items: flex-end; gap: 3px; height: 30px; }
+.viz-bar { width: 4px; border-radius: 2px; opacity: 0.6; }
+
+.card-main { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+.card-value { font-size: 2.5rem; font-weight: 700; }
+.card-trend { font-size: 0.85rem; color: #00ff94; font-weight: 500; }
+
+.card-desc { color: #888; font-size: 0.95rem; line-height: 1.6; margin-bottom: 32px; }
+
+.card-footer { 
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 20px; border-top: 1px solid #1a1a1e;
+}
+
+.status-indicator { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: #555; }
+.status-indicator span { width: 6px; height: 6px; border-radius: 50%; }
+
+.card-action { background: none; border: none; color: #fff; cursor: pointer; font-weight: 500; opacity: 0.5; transition: 0.3s; }
+.card-action:hover { opacity: 1; transform: translateX(5px); }

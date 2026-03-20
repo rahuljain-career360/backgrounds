@@ -1,3 +1,13 @@
+import CyberShardGrid from "../components/grid/CyberShardGrid";
+import PremiumInsightGrid from "../components/grid/PremiumInsightGrid";
+import BentoCarousel from "../components/login/BentoCarousel";
+import HyperMesh from "../components/login/HyperMesh";
+import InfinityCarousel from "../components/login/InfinityCarousel";
+import KineticPortal from "../components/login/KineticPortal";
+import KineticShard from "../components/login/KineticShard";
+import LiquidSlider from "../components/login/LiquidSlider";
+import NeuralGlass from "../components/login/NeuralGlass";
+import StackCarousel from "../components/login/StackCarousel";
 import AnimatedSVGPage from "../components/logo/AnimatedSVGPage";
 import CelestialGrid from "../components/logo/CelestialGrid";
 import EventHorizon from "../components/logo/EventHorizon";
@@ -108,4 +118,48 @@ export const timers = {
     name: "GlassmorphicCrystalPage Page Background",
     Component: GlassmorphicCrystal,
   },
+   InfinityCarouselPage: {
+    name: "Infinity Carousel Page Background",
+    Component: InfinityCarousel,
+  },
+    StackCarouselPage: {
+    name: "Stack Carousel Page Background",
+    Component: StackCarousel,
+  },
+  BentoCarouselPage: {
+    name: "Bento Carousel Page Background",
+    Component: BentoCarousel,
+  },
+
+   LiquidSliderPage: {
+    name: "LiquidSlider Carousel Page",
+    Component: LiquidSlider,
+  },
+
+  KineticPortalPage: {
+    name: "KineticPortal Carousel Page",
+    Component: KineticPortal,
+  },
+
+   KineticShardPage: {
+    name: "KineticShard Carousel Page",
+    Component: KineticShard,
+  },
+   NeuralGlassPage: {
+    name: "NeuralGlass Carousel Page",
+    Component: NeuralGlass,
+  },
+   HyperMeshPage: {
+    name: "HyperMesh Carousel Page",
+    Component: HyperMesh,
+  },
+   CyberShardGridPage: {
+    name: "CyberShard Grid Page",
+    Component: CyberShardGrid,
+  },
+   PremiumInsightGridPage: {
+    name: "PremiumInsight Grid  Page",
+    Component: PremiumInsightGrid,
+  }
+  
 } as const;

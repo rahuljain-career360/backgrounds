@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap');
+
+.neural-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.background-fixed {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.main-viewport {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  z-index: 10;
+  position: relative;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-right: 40px;
+}
+
+.vertical-line {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #333, transparent);
+}
+
+.index-num {
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 2px;
+}
+
+.content-core {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-portal {
+  width: 500px;
+  height: 650px;
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+}
+
+.glass-portal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+
+.portal-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(225deg, rgba(255,255,255,0.1), transparent);
+  backdrop-filter: contrast(1.2) saturate(1.2);
+}
+
+.text-overlay {
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+}
+
+.text-overlay h1 {
+  font-size: 10rem;
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.status-bar {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #555;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.pulse-icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 1;
+}

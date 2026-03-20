@@ -67,8 +67,8 @@ const BouncingBlobs: React.FC = () => {
   return (
     <div className="bouncing-container" ref={containerRef}>
       <div className="overlay-content">
-        <h1>Fixed Variant</h1>
-        <p>No more null ref errors</p>
+        <h1>Fixed Variant New</h1>
+        <p>No More Flex</p>
       </div>
       
       {blobsData.map((blob, i) => (

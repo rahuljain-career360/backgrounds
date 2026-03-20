@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+
+.hyper-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: #020202;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Syncopate', sans-serif;
+  cursor: none; /* Custom cursor recommend */
+}
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.main-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+}
+
+.perspective-box {
+  width: 500px;
+  height: 600px;
+  z-index: 10;
+}
+
+.central-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 40px;
+  background: #111;
+  overflow: visible; /* Content ko bahar nikalne ke liye */
+  box-shadow: 0 50px 100px rgba(0,0,0,0.9);
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+  filter: brightness(0.6) saturate(1.2);
+}
+
+.glass-lens {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  backdrop-filter: blur(5px) contrast(1.1);
+  border-radius: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: black;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+}
+
+.card-content h2 {
+  font-size: 3rem;
+  letter-spacing: 15px;
+  margin: 0 0 40px 15px;
+}
+
+.dots-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.dot-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot-btn.active {
+  background: white;
+  width: 40px;
+  border-radius: 10px;
+}
+
+.bg-title {
+  position: absolute;
+  font-size: 25vw;
+  font-weight: 700;
+  color: rgba(255,255,255,0.03);
+  z-index: 1;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.floating-ui {
+  position: absolute;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #444;
+  z-index: 20;
+}
+
+.top-left { top: 40px; left: 40px; }
+.bottom-right { bottom: 40px; right: 40px; }

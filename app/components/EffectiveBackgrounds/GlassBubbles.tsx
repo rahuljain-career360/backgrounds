@@ -63,7 +63,7 @@ const GlassBubbles: React.FC = () => {
   return (
     <div className="glass-container">
       <div className="center-content">
-        <h1>Glass Orbs</h1>
+        <h1>Premium Glass Orbs</h1>
         <p>Dynamic 3D Bubbles</p>
       </div>
       

@@ -25,7 +25,7 @@ const PremiumLogin: React.FC = () => {
             <input type="email" placeholder=" " id="email" required />
             <label htmlFor="email">Email Address</label>
             <Mail className="input-icon" size={18} />
-          </div>
+          </div>  
 
           <div className="floating-input">
             <input type="password" placeholder=" " id="pw" required />

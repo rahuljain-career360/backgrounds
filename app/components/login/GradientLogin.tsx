@@ -22,7 +22,7 @@ const GradientLogin: React.FC = () => {
 
           <div className="input-field">
             <input type="password" placeholder="Password" required />
-          </div>
+          </div>  
 
           <div className="extra-actions">
             <label><input type="checkbox" /> Remember me</label>

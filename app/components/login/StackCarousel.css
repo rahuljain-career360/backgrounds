@@ -1,0 +1,104 @@
+.stack-container {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  perspective: 2000px;
+}
+
+.info-layer {
+  text-align: center;
+  margin-bottom: 60px;
+  z-index: 10;
+}
+
+.info-layer h1 {
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 10px;
+  margin: 0;
+}
+
+.info-layer h1 span {
+  font-size: 1rem;
+  color: #555;
+  letter-spacing: 2px;
+}
+
+.info-layer p {
+  color: #444;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.card-stack {
+  position: relative;
+  width: 350px;
+  height: 480px;
+  transform-style: preserve-3d;
+  cursor: grab;
+}
+
+.card-stack:active {
+  cursor: grabbing;
+}
+
+.stack-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: #181818;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+}
+
+.card-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.glow-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  filter: blur(5px);
+}
+
+.card-label {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: white;
+}
+
+.card-label h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  backdrop-filter: blur(5px);
+  margin-top: 5px;
+}

@@ -192,7 +192,7 @@ const AccountItemsdata  = {
         "Big Mirror",
         "Small Mirror 7*5",
         "Head and Shoulder Sampoo 5 ladi",
-        "Cream 12 pcs",
+        "Cream 25 pauch pcs",
         "Comb 12pcs",
         "paracute Nariyal Oil 1pcs 10 wala",
         "Nail Cutter 2-3 pcs",
@@ -260,7 +260,8 @@ const AccountItemsdata  = {
         "Sajane ki items 3-4 pcs",
         "Key Rings 24 pcs",
         "Panni different 2",
-        "Weight machine"
+        "Weight machine",
+        "Indian Toys 10 pcs"
         
     ],
     Medium_items: [
@@ -288,6 +289,9 @@ const AccountItemsdata  = {
         "Mobile s25 ultra or iphone 17 or pro max",
     ],
 }
+
+
+
 
 
 

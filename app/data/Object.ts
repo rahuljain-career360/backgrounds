@@ -43,10 +43,40 @@ const driveDataa = {
 
 }
 
+const forGrowth = {
+    hairGrowth: [
+        "1) Din me 3-4 Liter Pani pina",
+        "2) Rozana 5 bhige huye badam",
+        "3 Chammach Parachute Castor Oil 2 Chammach Parachute (Hafte mein sirf 2 se 3 baar hi lagayein)",
+        "4) Coconut Oil (Nariyal tel ise patla kar dega taaki ye roots tak jaye).",
+        "Dono ko mix karke halka sa gun-guna (warm) kar lein. Isse scalp ke pores khulenge aur tel andar tak jayega.",
+    "Massage ka time: 10 minute (30 minute nahi!).",
+    "Pro Tip for Skin: Nimbu paani toh aap pi hi rahe hain, par din bhar mein 3-4 litre paani jo aapne kaha hai, wohi aapki skin ko andar se flush out karega aur natural chamak layega.",
+"Haftay mein 2 baar: Oil Massage (Castor + Coconut mix)."]
+
+}
+
 
 const FileData = {
 
 
+}
+
+const startNow = [
+
+]
+
+
+const personalData = {
+    Instagram: {
+        videos: ["Make Video and Edit and share of Products"],
+        Items: ["Jo bhi Item Buyt karo add karo Insta pe"],
+        Achivements: ["Jo Bhi Achiviment Karo add Karo"]
+    },
+    Linkedin: {
+        Achivements: ["Jo Bhi Achiviment Karo add Karo"],
+        Posts: ["Post Send karo jo bhi banao weekly 2 Posts"]
+    },
 }
 
 
@@ -148,7 +178,7 @@ const itemsData = {
         // "Brush 3 Pcs",
         // "Hattori",
         // "Pilas",
-        // "Enchitape",
+        // "Enchitape - 3 pcs",
         // "Tester",
         // "Black Red Tape",
         // "panni chahiye",
@@ -204,7 +234,7 @@ const itemsData = {
         // "Sajane ki items 3-4 pcs",
         // "Key Rings 24 pcs",
         // "Panni different 2",
-        // "Weight machine"
+        // "Weight machine",
 
     ],
     Medium_items: [
@@ -223,7 +253,7 @@ const itemsData = {
         // "Tool Cleaning Kit Portonics",
         // "Ganesh ka Container 24 box ka",
         // "Addidas Shoes 1pcs",
-
+        
 
     ],
     Big_items: [
@@ -236,6 +266,13 @@ const itemsData = {
         // Gold Coin 5 gm",
         // Gold Coin 5 gm",
 
+    ]
+}
+
+
+const data = {
+    OneData : [
+        "want Minimum Item"
     ]
 }
 
@@ -319,7 +356,183 @@ const user = {
 };
 
 
+
+
 // 3 march : 160+
 // 4 march : 320 
 // today : 230
 // cashback : 5+5+
+
+
+// user Data
+
+const testData = {
+    normal: ["Collect the Info of Logins Max"],
+    important : ["done credit card Bill"],
+    priprity: ["All Health data and leave all unhealth Habits"],
+    maxPriority: ["File Complain to samadhan portal and send mail to company final mail"],
+    data: ["Collect max to max data"]
+}
+
+
+
+
+const time = {
+    timeLine: ["2 Ghante subhe listing Song and enjoy"],
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const userTwo = {
+    "id": 400004547,
+    "email": "rahul.jain@careers360.in",
+    "name": "Rahul Jain",
+    "phone_number": "8979528775",
+    "username": "rahul.jain@careers360.in",
+    "dob": null,
+    "gender": null,
+    "about": null,
+    "email_verify": true,
+    "is_active": true,
+    "active_user_groups": [],
+    "is_premium": false,
+    "is_staff": false,
+    "location_id": 105,
+    "location_name": "New Delhi,Delhi",
+    "state": [
+        {
+            "id": 34,
+            "name": "Delhi"
+        }
+    ],
+    "city": [
+        {
+            "id": 100,
+            "name": "New Delhi"
+        }
+    ],
+    "connect_me_whatsapp": null,
+    "purchased_products": null,
+    "permissions": [],
+    "updates": false,
+    "admission_preference_status": 0,
+    "last_login": "2026-03-12T10:33:38+05:30",
+    "target_year": 2026,
+    "twelfth_passing_year": 2026,
+    "current_education_level": 12,
+    "user_exams": null,
+    "current_education_passing_year": 2026,
+    "updated_on": "2026-03-12T10:33:38+05:30",
+    "domain_id": 3,
+    "work_experience": null,
+    "country_details": {
+        "country_id": 1,
+        "country_name": "India"
+    },
+    "domain_details": {
+        "domain_id": 3,
+        "name": "Medicine and Allied Sciences",
+        "old_domain_name": "medicine.careers360.de"
+    },
+    "education_stream": 3,
+    "preferred_countries": [],
+    "user_interests": {
+        "indian_colleges": [
+            {
+                "stream_id": 3,
+                "is_primary": 1,
+                "interest_type_id": 5
+            }
+        ],
+        "study_abroad": [],
+        "certification": [],
+        "school": [],
+        "competition": []
+    },
+    "education_level": {
+        "id": 12,
+        "name": "Class 12th",
+        "old_level_id": 12,
+        "certification_level_id": 12,
+        "parent_level_name": "School"
+    },
+    "interested_in": [
+        5,
+        1
+    ],
+    "learn_user_id": 15767846
+}
+
+
+
+
+
