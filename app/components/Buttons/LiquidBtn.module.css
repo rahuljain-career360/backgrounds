@@ -1,0 +1,133 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a14;
+  padding: 40px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -2px;
+  margin-bottom: 4px;
+}
+
+.thin {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 700px;
+}
+
+.btn {
+  --liquid: #fff;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  isolation: isolate;
+}
+
+.btn:hover {
+  border-color: color-mix(in srgb, var(--liquid) 40%, transparent);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 40px color-mix(in srgb, var(--liquid) 15%, transparent);
+}
+
+.liquidHover .liquidBg {
+  opacity: 1;
+}
+
+.liquidBg {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--liquid) 15%, transparent);
+  filter: blur(20px);
+  animation: blobMove 2s ease-in-out infinite alternate;
+}
+
+.blob:nth-child(1) {
+  width: 120%;
+  height: 120%;
+  top: -30%;
+  left: -30%;
+}
+
+.blob:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  bottom: -40%;
+  right: -20%;
+}
+
+.blob:nth-child(3) {
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+
+@keyframes blobMove {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(20px, -20px) scale(1.1); }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.btn:hover .icon {
+  transform: scale(1.15);
+}
+
+.label {
+  letter-spacing: 0.5px;
+}
