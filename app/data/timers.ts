@@ -29,6 +29,12 @@ import GradientTimer from "../components/Timers/GradientTimer";
 import LuxuryTimer from "../components/Timers/LuxuryTimer";
 import PremiumTimer from "../components/Timers/PremiumTimer";
 import ShrinkingTimer from "../components/Timers/ShrinkingTimer";
+import FullscreenTimer from "../components/Timers/FullscreenTimer";
+import NebulaTimer from "../components/Timers/NebulaTimer";
+import HologramTimer from "../components/Timers/HologramTimer";
+import NeonPulseTimer from "../components/Timers/NeonPulseTimer";
+import CrystalTimer from "../components/Timers/CrystalTimer";
+import AuraTimer from "../components/Timers/AuraTimer";
 
 export const timers = {
   TimerOne: {
@@ -58,6 +64,30 @@ export const timers = {
   DeepClock: {
     name: "Deep Clock",
     Component: DeepClock,
+  },
+  FullscreenTimer: {
+    name: "Fullscreen Timer",
+    Component: FullscreenTimer,
+  },
+  NebulaTimer: {
+    name: "Nebula Timer",
+    Component: NebulaTimer,
+  },
+  HologramTimer: {
+    name: "Hologram Timer",
+    Component: HologramTimer,
+  },
+  NeonPulseTimer: {
+    name: "Neon Pulse Timer",
+    Component: NeonPulseTimer,
+  },
+  CrystalTimer: {
+    name: "Crystal Timer",
+    Component: CrystalTimer,
+  },
+  AuraTimer: {
+    name: "Aura Timer",
+    Component: AuraTimer,
   },
   ProductPage: {
     name: "Product Page",

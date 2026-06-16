@@ -1,0 +1,110 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0a0a12;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orb {
+  position: relative;
+  z-index: 2;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: radial-gradient(circle at 30% 30%, rgba(120, 80, 255, 0.15), rgba(20, 20, 40, 0.6));
+  border: 1px solid rgba(140, 100, 255, 0.2);
+  box-shadow:
+    0 0 80px rgba(120, 80, 255, 0.1),
+    inset 0 0 60px rgba(120, 80, 255, 0.05);
+  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+}
+
+.orb:hover {
+  border-color: rgba(140, 100, 255, 0.4);
+  box-shadow:
+    0 0 120px rgba(120, 80, 255, 0.2),
+    inset 0 0 80px rgba(120, 80, 255, 0.08);
+}
+
+.activeOrb {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 80px rgba(120, 80, 255, 0.15),
+      inset 0 0 60px rgba(120, 80, 255, 0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 120px rgba(160, 120, 255, 0.3),
+      inset 0 0 100px rgba(160, 120, 255, 0.1);
+  }
+}
+
+.orbInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.display {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  background: linear-gradient(135deg, #c4a0ff, #7c5cff, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.sub {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: rgba(160, 140, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.resetBtn {
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+  padding: 10px 32px;
+  background: rgba(120, 80, 255, 0.08);
+  border: 1px solid rgba(120, 80, 255, 0.2);
+  border-radius: 100px;
+  color: rgba(180, 160, 255, 0.7);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resetBtn:hover {
+  background: rgba(120, 80, 255, 0.15);
+  border-color: rgba(120, 80, 255, 0.4);
+  color: #c4a0ff;
+}

@@ -1,0 +1,156 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0a0a10;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.ambientBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 100, 150, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(100, 150, 255, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(150, 100, 255, 0.04) 0%, transparent 40%);
+}
+
+.auraLayer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.auraRing {
+  position: absolute;
+  border-radius: 50%;
+  transition: width 1s linear, height 1s linear, opacity 0.6s;
+}
+
+.aura1 {
+  background: radial-gradient(circle, rgba(255, 100, 150, 0.12), transparent 70%);
+  filter: blur(40px);
+}
+
+.aura2 {
+  background: radial-gradient(circle, rgba(100, 150, 255, 0.1), transparent 70%);
+  filter: blur(50px);
+}
+
+.aura3 {
+  background: radial-gradient(circle, rgba(150, 100, 255, 0.08), transparent 70%);
+  filter: blur(60px);
+}
+
+.auraActive {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.innerCircle {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 20, 30, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.corePulse {
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 150, 200, 0.06), transparent);
+  transition: opacity 0.4s;
+}
+
+.pulseActive {
+  animation: coreBreathe 2s ease-in-out infinite;
+}
+
+@keyframes coreBreathe {
+  0%, 100% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.textGroup {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.display {
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  color: #f0e8ff;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.4s;
+}
+
+.done {
+  font-size: 52px;
+  color: #ff99cc;
+  animation: fadePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes fadePulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.sub {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: rgba(200, 180, 255, 0.3);
+  text-transform: uppercase;
+}
+
+.btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+  padding: 10px 32px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 100px;
+  color: rgba(200, 180, 255, 0.3);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(200, 180, 255, 0.6);
+}

@@ -1,0 +1,139 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0c0c14;
+  overflow: hidden;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  perspective: 600px;
+  transform: rotateX(60deg);
+  transform-origin: center bottom;
+  opacity: 0.4;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px;
+  border: 2px solid rgba(0, 255, 255, 0.6);
+  transition: clip-path 1s linear;
+  filter: blur(0.5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), inset 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+.ringActive {
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.3), inset 0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+.holoCard {
+  position: relative;
+  background: rgba(0, 20, 30, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 60px 80px;
+  overflow: hidden;
+}
+
+.scanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent 0%,
+    rgba(0, 255, 255, 0.03) 50%,
+    transparent 100%
+  );
+  background-size: 100% 6px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.scanActive {
+  opacity: 1;
+  animation: scanMove 2s linear infinite;
+}
+
+@keyframes scanMove {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.display {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: rgba(0, 255, 255, 0.9);
+  text-shadow:
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 60px rgba(0, 255, 255, 0.2);
+  font-variant-numeric: tabular-nums;
+}
+
+.status {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: rgba(0, 255, 255, 0.4);
+}
+
+.cornerTL, .cornerTR, .cornerBL, .cornerBR {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: rgba(0, 255, 255, 0.3);
+  border-style: solid;
+}
+
+.cornerTL { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+.cornerTR { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+.cornerBL { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+.cornerBR { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+
+.btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+  padding: 10px 32px;
+  background: rgba(0, 255, 255, 0.06);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 6px;
+  color: rgba(0, 255, 255, 0.6);
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: rgba(0, 255, 255, 0.12);
+  border-color: rgba(0, 255, 255, 0.35);
+  color: rgba(0, 255, 255, 0.9);
+}

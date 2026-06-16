@@ -1,0 +1,131 @@
+.container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0f;
+  overflow: hidden;
+  gap: 40px;
+}
+
+.backgroundOrb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.15), transparent 70%);
+  top: -200px;
+  right: -200px;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.backgroundOrbTwo {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.12), transparent 70%);
+  bottom: -150px;
+  left: -150px;
+  animation: float 10s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.05); }
+}
+
+.clockWrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.progressRing {
+  transition: stroke-dashoffset 1s linear, stroke 0.3s ease;
+}
+
+.timeDisplay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.digits {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: "Courier New", monospace;
+  color: #ffffff;
+  letter-spacing: 4px;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
+}
+
+.warning {
+  color: #f59e0b;
+  text-shadow: 0 0 40px rgba(245, 158, 11, 0.4);
+  animation: pulse 0.5s ease-in-out infinite;
+}
+
+.danger {
+  color: #ef4444;
+  text-shadow: 0 0 60px rgba(239, 68, 68, 0.5);
+  animation: pulse 0.3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.status {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  z-index: 10;
+}
+
+.controlBtn {
+  padding: 12px 32px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.controlBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
