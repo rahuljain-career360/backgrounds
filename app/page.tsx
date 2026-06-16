@@ -8,6 +8,7 @@ export default function Home() {
         <Link className="home-buttons" href="premium-backgrounds" >Premium Backgrounds</Link>
         <Link className="home-buttons" href="blog" >Blog</Link>
         <Link className="home-buttons" href="timers" >Timers</Link>
+        <Link className="home-buttons" href="colors" >Colors</Link>
         <Link className="home-buttons" href="buttons" >Buttons</Link>
         <Link className="home-buttons" href="effectbackground" >Effective Backgrounds</Link>
     </div>

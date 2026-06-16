@@ -2,6 +2,7 @@ import { GradientBackground, WavesBackground } from "../components/Backgrounds";
 import { DotsBackground } from "../components/Background/DotsBackground";
 import { PremiumBackground } from "../components/Background/PremiumBackground";
 import CosmicNebulaBackground from "../components/Background/CosmicNebulaBackground";
+import MacColorBackground from "../components/Background/MacColorBackground";
 import { GrainyAuroraBackground } from "../components/Background/GrainyAuroraBackground";
 import { AnimatedOrganicShapesBackground } from "../components/Background/AnimatedOrganicShapesBackground";
 import { AdvancedLiquidBackground } from "../components/Background/AdvancedLiquidBackground";
@@ -160,5 +161,9 @@ export const backgrounds = {
   CosmicNebula: {
     name: "Cosmic Nebula",
     Component: CosmicNebulaBackground,
+  },
+  MacColor: {
+    name: "MacBook Colors",
+    Component: MacColorBackground,
   },
 } as const;
