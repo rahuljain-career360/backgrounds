@@ -13,6 +13,11 @@ import LiquidNebula from "../components/EffectiveBackgrounds/LiquidNebula";
 import LiquidSquares from "../components/EffectiveBackgrounds/LiquidSquares";
 import ModernGlassBubbles from "../components/EffectiveBackgrounds/ModernGlassBubbles";
 import PremiumMeshBackground from "../components/EffectiveBackgrounds/PremiumMeshBackground";
+import AuroraMesh from "../components/EffectiveBackgrounds/AuroraMesh";
+import SunsetMesh from "../components/EffectiveBackgrounds/SunsetMesh";
+import OceanMesh from "../components/EffectiveBackgrounds/OceanMesh";
+import CosmicMesh from "../components/EffectiveBackgrounds/CosmicMesh";
+import TropicalMesh from "../components/EffectiveBackgrounds/TropicalMesh";
 import RainEffect from "../components/EffectiveBackgrounds/RainEffect";
 import StarField from "../components/EffectiveBackgrounds/StarField";
 import TrendyGlassBubbles from "../components/EffectiveBackgrounds/TrendyGlassBubbles";
@@ -95,5 +100,25 @@ export const effectBackgrounds = {
   PremiumMesh: {
     name: "Premium Mesh Glass  Effect",
     Component: PremiumMeshBackground,
+  },
+  AuroraMesh: {
+    name: "Aurora Mesh",
+    Component: AuroraMesh,
+  },
+  SunsetMesh: {
+    name: "Sunset Mesh",
+    Component: SunsetMesh,
+  },
+  OceanMesh: {
+    name: "Ocean Mesh",
+    Component: OceanMesh,
+  },
+  CosmicMesh: {
+    name: "Cosmic Mesh",
+    Component: CosmicMesh,
+  },
+  TropicalMesh: {
+    name: "Tropical Mesh",
+    Component: TropicalMesh,
   },
 } as const;

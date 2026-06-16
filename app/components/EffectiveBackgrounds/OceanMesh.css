@@ -1,0 +1,171 @@
+:root {
+  --o-1: #0077b6;
+  --o-2: #00b4d8;
+  --o-3: #03045e;
+  --o-4: #48cae4;
+  --o-5: #023e8a;
+}
+
+.ocean-container {
+  position: fixed;
+  inset: 0;
+  background: #02040a;
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ocean-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  mix-blend-mode: overlay;
+}
+
+.ocean-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(100px);
+  opacity: 0.5;
+}
+
+.ocean-ball {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.ocean-1 {
+  width: 600px;
+  height: 600px;
+  background: var(--o-1);
+  top: -15%;
+  left: -5%;
+  animation: ocean-wave-1 20s infinite alternate ease-in-out;
+}
+
+.ocean-2 {
+  width: 500px;
+  height: 500px;
+  background: var(--o-2);
+  bottom: -10%;
+  right: -10%;
+  animation: ocean-wave-2 25s infinite alternate ease-in-out;
+}
+
+.ocean-3 {
+  width: 450px;
+  height: 450px;
+  background: var(--o-3);
+  top: 40%;
+  left: 30%;
+  animation: ocean-wave-1 22s infinite reverse ease-in-out;
+}
+
+.ocean-4 {
+  width: 350px;
+  height: 350px;
+  background: var(--o-4);
+  top: 15%;
+  right: 20%;
+  animation: ocean-wave-3 15s infinite alternate ease-in-out;
+}
+
+.ocean-5 {
+  width: 500px;
+  height: 500px;
+  background: var(--o-5);
+  bottom: 5%;
+  left: 15%;
+  animation: ocean-wave-2 18s infinite reverse ease-in-out;
+}
+
+@keyframes ocean-wave-1 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(6vw, -10vh) scale(1.1) rotate(45deg); }
+  100% { transform: translate(-8vw, 5vh) scale(0.95) rotate(90deg); }
+}
+
+@keyframes ocean-wave-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8vw, 12vh) scale(1.15); }
+  100% { transform: translate(10vw, -8vh) scale(0.9); }
+}
+
+@keyframes ocean-wave-3 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  50% { transform: translate(3vw, -5vh) scale(1.1); opacity: 0.7; }
+  100% { transform: translate(-4vw, 3vh) scale(0.85); opacity: 0.5; }
+}
+
+.ocean-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: 40px;
+}
+
+.ocean-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(0, 180, 216, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 180, 216, 0.1);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(0, 180, 216, 0.4);
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+.ocean-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 5.5rem;
+  line-height: 1;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -4px;
+}
+
+.ocean-title span {
+  background: linear-gradient(135deg, #00b4d8, #48cae4, #0077b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ocean-desc {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ocean-btn {
+  margin-top: 30px;
+  padding: 14px 32px;
+  background: rgba(0, 119, 182, 0.1);
+  color: #48cae4;
+  border: 1px solid rgba(0, 180, 216, 0.2);
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.ocean-btn:hover {
+  background: rgba(0, 180, 216, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 180, 216, 0.15);
+}

@@ -1,0 +1,176 @@
+:root {
+  --t-1: #06d6a0;
+  --t-2: #ffd166;
+  --t-3: #ef476f;
+  --t-4: #118ab2;
+  --t-5: #ff6b6b;
+}
+
+.tropical-container {
+  position: fixed;
+  inset: 0;
+  background: #0a0f0a;
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tropical-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  mix-blend-mode: overlay;
+}
+
+.tropical-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(95px);
+  opacity: 0.55;
+}
+
+.tropical-ball {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.tropical-1 {
+  width: 550px;
+  height: 550px;
+  background: var(--t-1);
+  top: -10%;
+  left: 10%;
+  animation: tropical-swing-1 15s infinite alternate ease-in-out;
+}
+
+.tropical-2 {
+  width: 480px;
+  height: 480px;
+  background: var(--t-2);
+  top: 20%;
+  right: -10%;
+  animation: tropical-swing-2 18s infinite alternate ease-in-out;
+}
+
+.tropical-3 {
+  width: 520px;
+  height: 520px;
+  background: var(--t-3);
+  bottom: -15%;
+  left: 20%;
+  animation: tropical-swing-1 20s infinite reverse ease-in-out;
+}
+
+.tropical-4 {
+  width: 380px;
+  height: 380px;
+  background: var(--t-4);
+  bottom: 15%;
+  right: 15%;
+  animation: tropical-swing-3 12s infinite alternate ease-in-out;
+}
+
+.tropical-5 {
+  width: 300px;
+  height: 300px;
+  background: var(--t-5);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: tropical-breathe 5s infinite ease-in-out alternate;
+}
+
+@keyframes tropical-swing-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(8vw, -10vh) scale(1.1); }
+  100% { transform: translate(-6vw, 8vh) scale(0.95); }
+}
+
+@keyframes tropical-swing-2 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(-10vw, 6vh) scale(1.15) rotate(60deg); }
+  100% { transform: translate(5vw, -12vh) scale(0.9) rotate(120deg); }
+}
+
+@keyframes tropical-swing-3 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(4vw, -6vh) scale(1.2); }
+}
+
+@keyframes tropical-breathe {
+  0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0.3; }
+  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+}
+
+.tropical-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: 40px;
+}
+
+.tropical-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(6, 214, 160, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(6, 214, 160, 0.1);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(6, 214, 160, 0.4);
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+.tropical-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 5.5rem;
+  line-height: 1;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -4px;
+}
+
+.tropical-title span {
+  background: linear-gradient(135deg, #06d6a0, #ffd166, #ef476f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tropical-desc {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tropical-btn {
+  margin-top: 30px;
+  padding: 14px 32px;
+  background: rgba(6, 214, 160, 0.1);
+  color: #06d6a0;
+  border: 1px solid rgba(6, 214, 160, 0.2);
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.tropical-btn:hover {
+  background: rgba(6, 214, 160, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(6, 214, 160, 0.15);
+}

@@ -1,17 +1,14 @@
 "use client"
 import { notFound } from "next/navigation"; 
-import { backgrounds } from "../../data/backgrounds";
+import { backgrounds } from "@/app/data/backgrounds";
+import DownloadTool from "@/app/components/DownloadTool/DownloadTool";
 
-// 1. Params ko Promise define karein
 export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // 2. Params ko await karein
   const { slug } = await params;
-  
-  console.log("Slug value:", slug);
 
   const bg = backgrounds[slug as keyof typeof backgrounds];
 
@@ -20,5 +17,9 @@ export default async function Page({
   }
 
   const Background = bg.Component;
-  return <Background />;
+  return (
+    <DownloadTool fileName={slug}>
+      <Background />
+    </DownloadTool>
+  );
 }

@@ -1,0 +1,142 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer {
+  flex: 1;
+  position: relative;
+}
+
+.bar {
+  position: relative;
+  z-index: 200;
+  background: rgba(8, 8, 14, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 10px 20px;
+}
+
+.barInner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 130px;
+}
+
+.label {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.select {
+  width: 100%;
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+.select:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.select option {
+  background: #14141e;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 28px;
+  background: linear-gradient(135deg, rgba(160, 124, 255, 0.2), rgba(96, 208, 255, 0.2));
+  border: 1px solid rgba(160, 124, 255, 0.25);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+  min-width: 170px;
+  justify-content: center;
+  letter-spacing: 0.3px;
+}
+
+.downloadBtn:hover {
+  background: linear-gradient(135deg, rgba(160, 124, 255, 0.3), rgba(96, 208, 255, 0.3));
+  border-color: rgba(160, 124, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(160, 124, 255, 0.1);
+}
+
+.downloadBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .bar {
+    padding: 8px 12px;
+  }
+
+  .barInner {
+    gap: 8px;
+  }
+
+  .control {
+    min-width: 90px;
+  }
+
+  .select {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .downloadBtn {
+    padding: 7px 16px;
+    font-size: 12px;
+    min-width: 120px;
+  }
+}

@@ -1,0 +1,312 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #08080e;
+  font-family: "Inter", sans-serif;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.2);
+  margin: 4px 0 0;
+}
+
+.loadBtn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: rgba(160, 124, 255, 0.1);
+  border: 1px solid rgba(160, 124, 255, 0.2);
+  border-radius: 12px;
+  color: rgba(200, 180, 255, 0.8);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.loadBtn:hover {
+  background: rgba(160, 124, 255, 0.18);
+  border-color: rgba(160, 124, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  border-top-color: rgba(160, 124, 255, 0.6);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.controlGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ctrlLabel {
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.select {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+
+.select:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.select option {
+  background: #14141e;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dropZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.dropZone:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dragOver {
+  border-color: rgba(160, 124, 255, 0.3);
+  background: rgba(160, 124, 255, 0.05);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dropIcon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.dropText {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 500;
+}
+
+.fileName {
+  font-size: 11px;
+  color: rgba(160, 124, 255, 0.4);
+  font-weight: 500;
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  min-height: 20px;
+}
+
+.statusText {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+}
+
+.statusIdle {
+  color: rgba(255, 255, 255, 0.12);
+}
+
+.qualityHint {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.1);
+  letter-spacing: 1px;
+}
+
+.progressWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.progressBg {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #a07cff, #60d0ff);
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.progressPct {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.3);
+  min-width: 36px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.output {
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 20px;
+}
+
+.preview {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  margin-bottom: 16px;
+}
+
+.outputInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.outputLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+}
+
+.outputActions {
+  display: flex;
+  gap: 8px;
+}
+
+.downloadBtn {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, rgba(160, 124, 255, 0.15), rgba(96, 208, 255, 0.15));
+  border: 1px solid rgba(160, 124, 255, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.downloadBtn:hover {
+  background: linear-gradient(135deg, rgba(160, 124, 255, 0.25), rgba(96, 208, 255, 0.25));
+  border-color: rgba(160, 124, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.resetBtn {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.resetBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.errorState {
+  text-align: center;
+  color: rgba(255, 100, 100, 0.5);
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}

@@ -1,17 +1,14 @@
 "use client"
 import { notFound } from "next/navigation"; 
 import { effectBackgrounds } from "@/app/data/effectBackgrounds";
+import DownloadTool from "@/app/components/DownloadTool/DownloadTool";
 
-// 1. Params ko Promise define karein
 export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // 2. Params ko await karein
   const { slug } = await params;
-  
-  console.log("Slug value:", slug);
 
   const bg = effectBackgrounds[slug as keyof typeof effectBackgrounds];
 
@@ -20,5 +17,9 @@ export default async function Page({
   }
 
   const EffectiveBackground = bg.Component;
-  return <EffectiveBackground />;
+  return (
+    <DownloadTool fileName={slug}>
+      <EffectiveBackground />
+    </DownloadTool>
+  );
 }
