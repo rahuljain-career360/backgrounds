@@ -25,7 +25,7 @@ import { FlipMaster } from "../components/Timers/FlipMaster";
 
 export const effectBackgrounds = {
   TimerOne: {
-    name: "First Timer",
+    name: "First Timer",  
     Component: FlipMaster,
   },
   RainEffect: {
@@ -115,10 +115,14 @@ export const effectBackgrounds = {
   },
   CosmicMesh: {
     name: "Cosmic Mesh",
-    Component: CosmicMesh,
+    Component: CosmicMesh,  
   },
   TropicalMesh: {
     name: "Tropical Mesh",
     Component: TropicalMesh,
   },
 } as const;
+
+
+
+

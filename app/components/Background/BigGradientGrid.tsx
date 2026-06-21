@@ -9,7 +9,7 @@ export const BigGradientGrid = () => {
   // 512 Unique Premium Gradients generate karte hain
   const colorPalette = useMemo(() => {
     return Array.from({ length: totalBoxes }).map(() => ({
-      c1: `hsl(${Math.random() * 360}, 70%, 50%)`,
+      c1: `hsl(${Math.random() * 360}, 70%, 50%)`,  
       c2: `hsl(${Math.random() * 360}, 80%, 30%)`,
     }));
   }, []);

@@ -4,6 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="home-page">
+        <Link className="home-buttons" href="fd-calculator" >FD Calculator</Link>
         <Link className="home-buttons" href="video-exporter" >Video Exporter</Link>
         <Link className="home-buttons" href="color-maker" >Color Maker</Link>
         <Link className="home-buttons" href="download-tool" >Download Tool</Link>
