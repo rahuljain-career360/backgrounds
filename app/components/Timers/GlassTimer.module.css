@@ -43,6 +43,7 @@
   justify-content: center;
   border-radius: 50%;
   
+  
   /* Gradient with Glass Effect */
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
   backdrop-filter: blur(8px);
