@@ -76,7 +76,7 @@ const MacColorBackground: React.FC = () => {
 
   const t = animPhase / 100;
 
-  const gradients = [
+  const gradients: { p1: (string | number)[]; p2: (string | number)[] }[] = [
     { p1: [c[0], c[1], 0, 0, 1], p2: [c[2], c[3], 1, 1, 1 - t] },
     { p1: [c[2], c[3], 0, 1, t], p2: [c[4], c[0], 1, 0, 0.5 + t * 0.5] },
     { p1: [c[4], c[0], 0.5, 0, 0.3 + t * 0.4], p2: [c[1], c[2], 0.5, 1, 0.7 - t * 0.4] },
@@ -92,7 +92,7 @@ const MacColorBackground: React.FC = () => {
               key={i}
               className={styles.gradBlob}
               style={{
-                background: `radial-gradient(ellipse at ${g.p1[2] * 100}% ${g.p1[3] * 100}%, ${g.p1[0]} 0%, ${g.p1[1]} ${30 + g.p1[4] * 40}%, transparent 70%)`,
+                background: `radial-gradient(ellipse at ${Number(g.p1[2]) * 100}% ${Number(g.p1[3]) * 100}%, ${g.p1[0]} 0%, ${g.p1[1]} ${30 + Number(g.p1[4]) * 40}%, transparent 70%)`,
                 top: `${10 + Math.sin(t * Math.PI * 2 + i * 1.5) * 20}%`,
                 left: `${10 + Math.cos(t * Math.PI * 2 + i * 2) * 20}%`,
                 width: `${50 + Math.sin(t * Math.PI + i * 1.2) * 20}%`,
@@ -106,7 +106,7 @@ const MacColorBackground: React.FC = () => {
               key={`b-${i}`}
               className={styles.gradBlob}
               style={{
-                background: `radial-gradient(ellipse at ${50 + Math.sin(t * 2 + i * 2.5) * 30}% ${50 + Math.cos(t * 1.7 + i * 1.8) * 30}%, ${g.p2[0]} 0%, ${g.p2[1]} ${30 + g.p2[4] * 40}%, transparent 70%)`,
+                background: `radial-gradient(ellipse at ${50 + Math.sin(t * 2 + i * 2.5) * 30}% ${50 + Math.cos(t * 1.7 + i * 1.8) * 30}%, ${g.p2[0]} 0%, ${g.p2[1]} ${30 + Number(g.p2[4]) * 40}%, transparent 70%)`,
                 top: `${60 + Math.cos(t * Math.PI * 2 + i * 2) * 15}%`,
                 left: `${60 + Math.sin(t * Math.PI * 2 + i * 1.3) * 15}%`,
                 width: `${40 + Math.cos(t * Math.PI + i * 1.5) * 15}%`,

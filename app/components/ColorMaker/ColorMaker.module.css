@@ -34,6 +34,32 @@
   margin: 4px 0 0;
 }
 
+.modeGroup {
+  display: flex;
+  margin: 0 20px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 3px;
+}
+
+.modeBtn {
+  flex: 1;
+  padding: 7px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modeActive {
+  background: rgba(160, 124, 255, 0.15);
+  color: #fff;
+}
+
 .tabs {
   display: flex;
   margin: 0 20px 12px;
@@ -90,14 +116,15 @@
 .colorRow {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .colorPicker {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   padding: 2px;
   background: transparent;
@@ -109,17 +136,18 @@
 
 .colorPicker::-webkit-color-swatch {
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .colorInput {
   flex: 1;
-  padding: 8px 12px;
+  min-width: 0;
+  padding: 8px 10px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
+  border-radius: 6px;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
+  font-size: 12px;
   font-family: "SF Mono", "Fira Code", monospace;
   outline: none;
   transition: border-color 0.2s;
@@ -129,9 +157,81 @@
   border-color: rgba(255, 255, 255, 0.15);
 }
 
+.opacitySlider {
+  width: 50px;
+  min-width: 50px;
+  height: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.opacitySlider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+}
+
+.opacitySlider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+}
+
+.opacityLabel {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.25);
+  min-width: 30px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.slider {
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(160, 124, 255, 0.5);
+  border: none;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(160, 124, 255, 0.5);
+  border: none;
+  cursor: pointer;
+}
+
 .removeBtn {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,10 +271,12 @@
 .chipGroup {
   display: flex;
   gap: 6px;
+  flex-wrap: wrap;
 }
 
 .chip {
   flex: 1;
+  min-width: 60px;
   padding: 8px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -301,11 +403,13 @@
   font-family: "SF Mono", "Fira Code", monospace;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
+  padding: 6px 14px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 8px;
   white-space: nowrap;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .bar {
@@ -403,6 +507,74 @@
 
 .loading {
   animation: pulse 1s ease-in-out infinite;
+}
+
+.parserToggle {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: rgba(160, 124, 255, 0.5);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.parserToggle:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(160, 124, 255, 0.2);
+  color: rgba(160, 124, 255, 0.7);
+}
+
+.parserBox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+
+.parserInput {
+  width: 100%;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-family: "SF Mono", "Fira Code", monospace;
+  outline: none;
+  resize: vertical;
+  min-height: 50px;
+}
+
+.parserInput:focus {
+  border-color: rgba(160, 124, 255, 0.3);
+}
+
+.parserBtn {
+  padding: 7px;
+  background: rgba(160, 124, 255, 0.15);
+  border: 1px solid rgba(160, 124, 255, 0.25);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.parserBtn:hover {
+  background: rgba(160, 124, 255, 0.25);
+}
+
+.parserBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 @keyframes pulse {

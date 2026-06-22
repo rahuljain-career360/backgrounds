@@ -322,6 +322,20 @@ const ImportantSaman = {
 
 
 
+const drawerItems = {
+  DrawerOne:["Macbook Laptop", "Charger", "Earphone and all Related Gadgets"],
+  DrawerTwo: ["Chasma", "Belt", "Wallet", "Watches"],
+  DrawerThree: ["Chains", "Bracelets", "Rings",],
+  DrawerFour: ["All Documents", "All Personal Files", "All Office Documets", "Diary"],
+  DrawerFive: ["Paise", "All money Related FD", "sona", "chandhi",],
+  DrawrSix: [""],
+  BigDrawerOne: [],
+  BigDrawerTwo: [],
+}
+
+
+
+
 
 
 
@@ -361,6 +375,7 @@ const timemanage = {
 const plansData = {
   step1: ["Create Data in Ruff Files", "Add in Notes with date"],
   step2: ["When They Finish at Level Then ussko Fair kar loo", "Add in task List"],
+  
   step3: ["Then Fair ke baad Completed karo sirf Fair task ko ussko nahi jo ruff hai"],
   step4: ["create a Important Task List jaha Sirf wo task add karo jisse sabse Pahle karna hai", "Add in Important Task List"],
   step5: ["Then Create a Daily Task List jaha Sirf wo task add karo jisse har din karna hai", "Add in Daily Task List"],
